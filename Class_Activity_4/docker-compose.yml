@@ -1,0 +1,23 @@
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "8080:80"
+    networks:
+      - webnet
+    restart: always
+
+  backend:
+    build: ./backend
+    volumes:
+      - ./backend/database.db:/usr/src/app/database.db
+    ports:
+      - "5000:5000"
+    networks:
+      - webnet
+    depends_on:
+      - frontend
+    restart: always
+
+networks:
+  webnet:

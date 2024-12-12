@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decision Tree Classifier</title>
+</head>
+<body>
+    <h1>Predict using Decision Tree</h1>
+    
+    <!-- Input Section -->
+    <form method="POST" action="/predict">
+        <label for="feature_1">Feature 1:</label>
+        <input type="text" name="feature_1" required><br><br>
+
+        <label for="feature_2">Feature 2:</label>
+        <input type="text" name="feature_2" required><br><br>
+
+        <label for="feature_3">Feature 3:</label>
+        <input type="text" name="feature_3" required><br><br>
+
+        <label for="feature_4">Feature 4:</label>
+        <input type="text" name="feature_4" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <!-- Output Section -->
+    <div id="output">
+        <h2>Output</h2>
+        {% if prediction %}
+        <p>Prediction: {{ prediction }}</p>
+        {% else %}
+        <p>No prediction yet.</p>
+        {% endif %}
+    </div>
+
+</body>
+</html>
